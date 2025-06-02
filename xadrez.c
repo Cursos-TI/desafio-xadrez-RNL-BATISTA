@@ -1,36 +1,45 @@
 #include <stdio.h>
 
+void moverTorre(int t){
+    if(t>0){
+        moverTorre(t-1);
+        printf("Torre Direita (%d)\n", t);
+    }
+}
+
+void moverBispo(int b){
+    if(b>0){
+        moverBispo(b-1);
+        printf("Bispo Direita (%d)\n", b);
+    }
+}
+
+void moverQueen(int q){
+    if(q>0){
+        moverQueen(q-1);
+        printf("Rainha Esquerda (%d)\n", q);
+    }
+}
+
 int main (){
-    int torre=0, bispo = 0, queen, cavalo1, cavalo2=1;
-    //Declarando variaves
-    printf("Torre\n");
+    int cavalo1, cavalo2=1;
+
+    moverTorre(5);
+    printf("\n");
+
+    moverBispo(5);
+    printf("\n");
+
+    moverQueen(8);
+    printf("\n");
     //Movimento torre
-    while(torre < 5){
-        printf("Torre Direita (%d)\n", torre);
-        torre++;
-        
-    }
-    printf("Bispo\n"); //Espaçamento para melhor entender as respostas.
-   //Movimento bispo
-    do{
-        printf("Bispo Cima Direta (%d)\n", bispo);
-        bispo++;
-       
-    }while (bispo<5);
-    printf("Rainha\n"); //Espaçamento para melhor entender as respostas.
-    //Movimento rainha
-    for (queen = 0; queen < 8; queen++)
-    {
-        printf("Rainha Esquerda (%d)\n", queen);
-        
-    }
-    printf("Cavalo\n"); //Espaçamento para melhor entender as respostas.
+
     for(cavalo1=1; cavalo1<2; cavalo1++)
     {
         while(cavalo2<=2){
-            printf("Baixo\n");
+            printf("Cima\n");
             cavalo2++;
         }
-        printf("Esquerda\n");
+        printf("Direita\n");
     }
 }
